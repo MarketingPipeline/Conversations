@@ -10,3 +10,4 @@
 - [ ] Create any corpus data-sets. 
 - [ ] Translate corpus etcs. 
 - [ ] Any improvements that make the chatbot more friendly developer & user wise. 
+- [ ] Fix issues for mobile (NLP.js library has conflicts for mobile inputs)
