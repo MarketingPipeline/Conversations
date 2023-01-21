@@ -75,7 +75,7 @@ import {Termino} from 'https://cdn.jsdelivr.net/gh/MarketingPipeline/Termino.js@
      
  import {fetch_tmdb_info, tmdb_api_key} from 'https://cdn.jsdelivr.net/gh/MarketingPipeline/TheMovieDB-API-Wrapper.js/dist/themoviedb-api-wrapper.min.js' 
 
-tmdb_api_key("6b4357c41d9c606e4d7ebe2f4a8850ea")
+tmdb_api_key("PUT YOUR API KEY HERE")
 
      
     
@@ -239,7 +239,7 @@ const {containerBootstrap, Nlp, LangEn, fs} = window.nlpjs;
      // GREETING INTENT FUNCTIONS
      
      var greetings = {
-  hello: async function() {
+  movie: async function() {
      
     /// FUNCTION TO SEARCH TMDB    
      let tt = await Bot_MSG(`What do you want to search? <br>
@@ -319,7 +319,7 @@ const {containerBootstrap, Nlp, LangEn, fs} = window.nlpjs;
     
    
   },
-  hellos: function (){
+  hello: function (){
      /// FUNCTION TO SAY HELLO BASED ON HOUR OF DAY.
         const hours = new Date().getHours();
           let answer;
