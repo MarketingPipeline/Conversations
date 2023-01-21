@@ -8,31 +8,13 @@
 <script src='https://cdn.jsdelivr.net/gh/MeetMartin/nlpjs-web/dist/bundle.js'></script>
     
     <!-- Bootstrap CSS -->
-
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+--test>
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <link rel="stylesheet" href="static/style.css">
 <style>
-  
-  .repl {
-    text-shadow: none;
-    color: #333;
-    background: #f8f8f8;
-    padding: 0;
-    text-align: left;
-    width: 600px;
-    margin: 50px auto;
-    border-radius: 3px;
-    border: 1px solid #ddd;
-    overflow:hidden;
-}
-
-.repl code {
-    height: 200px;
-    overflow-y: scroll;
-}
-
   .user-card-body {
  /* OLD COLOR
   background-color: #ff0080;
@@ -51,76 +33,45 @@
   border-radius: 40px;
 }
   
- /* styling used  for the Termino.js - terminal demo(s) */   
-.repl {
-    text-shadow: none;
-    color: #333;
-    background: #f8f8f8;
-    padding: 0;
-    text-align: left;
-    width: 600px;
-    margin: 50px auto;
-    border-radius: 3px;
-    border: 1px solid #ddd;
-    overflow:hidden;
-}
-
-.repl code {
-    height: 200px;
-    overflow-y: scroll;
-}
-
-pre {
-    margin: 0;
-}
-
-.termino-console {
-    padding: 11px 16px;
-    display: block;
-}
-
-.termino-input-container {
-    display: flex;
-}
-
-.termino-input-container > * {
-    outline: none;
-    border: none;
-    white-space: pre-wrap;
-    font-family: monospace;
-    color: #444;
-    background: #f0f0f0;
-    min-height: 14px; /* minimum one line */
-    padding: 10px;
-    margin: 0;
-    border-radius: 0 0 3px 3px;
-    border-top: 1px solid #ddd;
-}
-
 .termino-input {
     flex: 1;
     height: 100%; /* start off one line tall */
     padding-left: 0;
-}
-
-.termino-prompt {a
-    font-weight: bold;
-    padding: 8px 10px;
-}
+}  
     </style>
     <title>Chatbot</title>
   </head>
   <body>
-  <section class="section--standalone" id="Example_Terminal_2">
-    <div class="repl">
-      <pre><code class="termino-console"></code></pre>
-        <div class="termino-input-container">
-         
-            <label id="termino-prompt" for="termino-input">→ </label>
-            <textarea  class="termino-input"   rows="1" wrap="hard" placeholder="This is just a demo animation!"></textarea>
+    <!---- old color for pink is #ff0080 ----->
+    <nav class="navbar sticky-top navbar-dark" style="background-color: #1ca315;">
+      <a class="navbar-brand" href="/">
+      <i class="fas fa-robot mr-2"></i>
+        <b>Chatbot</b>
+      </a>
+    </nav>
+
+    <div class="container-fluid mt-2" id="Example_Terminal_2">
+      <div class="row">
+        <div class="col">
+          <div id="chatbox" class="termino-console"></div>
         </div>
-    </div> 
+      </div>
+      <div id="chatbot-container">&nbsp;</div>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      <div class="row">
+        <div class="col">
+         
+          <div class="ml-3 mb-3 mr-3 fixed-bottom">
+            <textarea id="termino-input"  class="form-control termino-input"  rows="1" wrap="hard" placeholder="Enter your message here"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="static/chatbot.js"></script>
   </body>
    <script type="module">
     // Termino.js - Terminal App Demo (Basic)
@@ -476,7 +427,7 @@ let term2value = await term2.input("")
             const response = await nlp.process('en', term2value);
        
   //  NEED TO FIGURE OUT FIX FOR CSS / SCROLL TO BOTTOM - BOOTSTRAP ISSUE - TERMINO.JS HAS BUILT IT SCROLL TO BOTTOM ON COMMANDS.
-//  window.scrollTo(0, document.body.scrollHeight);
+  window.scrollTo(0, document.body.scrollHeight);
   
 // repeat
 setTimeout(basicTerminalApp, term2value)
