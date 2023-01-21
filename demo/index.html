@@ -225,9 +225,15 @@ const {containerBootstrap, Nlp, LangEn, fs} = window.nlpjs;
           } else{
             type = term2.input
           }
-         return type(`<div class="d-flex justify-content-start"><div class="message-bubble">${message}</div>
+         return type(`<div class="d-flex justify-content-start">
+        <div class="card mb-3">
+          <div class="card-body bot-card-body">
+            <p class="card-text">${message}</p>
+          </div>
+        </div>
       </div>
       `)  
+        
         }
           
      // GREETING INTENT FUNCTIONS
@@ -416,11 +422,6 @@ let term2value = await term2.input("")
 
             const response = await nlp.process('en', term2value);
        
-   const entities = await nlp.extractEntities(
-    'I should go now'
-  );
- 
-  console.log(entities);
   //  NEED TO FIGURE OUT FIX FOR CSS / SCROLL TO BOTTOM - BOOTSTRAP ISSUE - TERMINO.JS HAS BUILT IT SCROLL TO BOTTOM ON COMMANDS.
   window.scrollTo(0, document.body.scrollHeight);
   
