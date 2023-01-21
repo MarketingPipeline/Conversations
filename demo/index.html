@@ -8,13 +8,31 @@
 <script src='https://cdn.jsdelivr.net/gh/MeetMartin/nlpjs-web/dist/bundle.js'></script>
     
     <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <link rel="stylesheet" href="static/style.css">
 <style>
+  
+  .repl {
+    text-shadow: none;
+    color: #333;
+    background: #f8f8f8;
+    padding: 0;
+    text-align: left;
+    width: 600px;
+    margin: 50px auto;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    overflow:hidden;
+}
+
+.repl code {
+    height: 200px;
+    overflow-y: scroll;
+}
+
   .user-card-body {
  /* OLD COLOR
   background-color: #ff0080;
@@ -103,9 +121,6 @@ pre {
         </div>
     </div> 
     <!-- Optional JavaScript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    <script src="static/chatbot.js"></script>
   </body>
    <script type="module">
     // Termino.js - Terminal App Demo (Basic)
@@ -461,7 +476,7 @@ let term2value = await term2.input("")
             const response = await nlp.process('en', term2value);
        
   //  NEED TO FIGURE OUT FIX FOR CSS / SCROLL TO BOTTOM - BOOTSTRAP ISSUE - TERMINO.JS HAS BUILT IT SCROLL TO BOTTOM ON COMMANDS.
-  window.scrollTo(0, document.body.scrollHeight);
+//  window.scrollTo(0, document.body.scrollHeight);
   
 // repeat
 setTimeout(basicTerminalApp, term2value)
