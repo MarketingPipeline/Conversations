@@ -8,8 +8,8 @@
 <script src='https://cdn.jsdelivr.net/gh/MeetMartin/nlpjs-web/dist/bundle.js'></script>
     
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+--test>
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
@@ -32,6 +32,12 @@
 .card {
   border-radius: 40px;
 }
+  
+.termino-input {
+    flex: 1;
+    height: 100%; /* start off one line tall */
+    padding-left: 0;
+}  
     </style>
     <title>Chatbot</title>
   </head>
@@ -57,7 +63,7 @@
         <div class="col">
          
           <div class="ml-3 mb-3 mr-3 fixed-bottom">
-            <textarea id="termino-input"  class="form-control termino-input"  rows="1" wrap="hard" placeholder="Enter your here"></textarea>
+            <textarea id="termino-input"  class="form-control termino-input"  rows="1" wrap="hard" placeholder="Enter your message here"></textarea>
           </div>
         </div>
       </div>
