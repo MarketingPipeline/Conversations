@@ -5,15 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<script src='https://cdn.jsdelivr.net/gh/MeetMartin/nlpjs-web/dist/bundle.js'></script>
+<!--<script src='https://cdn.jsdelivr.net/gh/MeetMartin/nlpjs-web/dist/bundle.js'></script>--->
     
     
-       <script type="module" defer>
+       <script type="module">
+       
+
+  
+         
+         
     // Termino.js - Terminal App Demo (Basic)
 import {Termino} from 'https://cdn.jsdelivr.net/gh/MarketingPipeline/Termino.js@v1.0.0/dist/termino.min.js';
      
  import {fetch_tmdb_info, tmdb_api_key} from 'https://cdn.jsdelivr.net/gh/MarketingPipeline/TheMovieDB-API-Wrapper.js/dist/themoviedb-api-wrapper.min.js' 
 
+         
+ import "https://polyfill.io/v3/polyfill.min.js?features=console" // POLYFILLS NEEDED.
+import core from "https://cdn.skypack.dev/@nlpjs/core@4.26.1";
+import nlp from "https://cdn.skypack.dev/@nlpjs/nlp@4.26.1";
+import langenmin from "https://cdn.skypack.dev/@nlpjs/lang-en-min@4.26.1";
+import requestrn from "https://cdn.skypack.dev/@nlpjs/request-rn@4.25.0";
+
+window.nlpjs = { ...core, ...nlp, ...langenmin, ...requestrn };        
+         
 tmdb_api_key("PUT YOUR API KEY HERE")
 
      
