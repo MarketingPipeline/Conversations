@@ -330,7 +330,6 @@ return;
             }
             
         }
-
         const setupNLP = async corpus => {
             const container = containerBootstrap();
             container.register('fs', fs);
@@ -344,7 +343,13 @@ return;
             return nlp;
         };
                // This is where all the responses for chatbot come from! You can make your own corpus data to fit your own chat bot needs! 
-            const nlp = await setupNLP('https://raw.githubusercontent.com/jesus-seijas-sp/nlpjs-examples/master/01.quickstart/05.consoleconnector/corpus-en.json');
+            
+
+          let nlp = null;         
+         (async () => {
+             nlp = await setupNLP('https://raw.githubusercontent.com/jesus-seijas-sp/nlpjs-examples/master/01.quickstart/05.consoleconnector/corpus-en.json');
+        
+        })();
  
     
 // initialize a Terminal via Termino.js
@@ -359,13 +364,13 @@ async function basicTerminalApp() {
 let term2value = await term2.input("")
 
 if (term2value != ""){
-const response = await nlp.process('en', term2value);
+let response = await nlp.process('en', term2value);
 }      
   //  NEED TO FIGURE OUT FIX FOR CSS / SCROLL TO BOTTOM - BOOTSTRAP ISSUE - TERMINO.JS HAS BUILT IT SCROLL TO BOTTOM ON COMMANDS.
   window.scrollTo(0, document.body.scrollHeight);
   
 // repeat
-setTimeout(basicTerminalApp, term2value)
+basicTerminalApp()
 
 
 }
